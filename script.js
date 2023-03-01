@@ -15,19 +15,17 @@ const slideEl = (el) => {
         el.classList.replace('slide-right', 'slide-left');
     }
 };
-
+//The function is added to the list elements
 listItems.forEach(item => {
     item.addEventListener('click', () => {
         menuIcon.classList.toggle('change');
-        console.log(item);
         slideEl(modal);
         listItems.forEach(item => {
             slideEl(item);
         });
     });
 });
-
-
+//The same function is added to the menu icon
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('change');
     slideEl(modal);
